@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "strict": true,
     "module": "commonjs",
     "declaration": true,
     "removeComments": true,
@@ -15,46 +16,21 @@
     "strictNullChecks": false,
     "noImplicitAny": false,
     "strictBindCallApply": false,
-    "forceConsistentCasingInFileNames": false,
+    "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": false,
     "paths": {
-      "@root/*": [
-        "./*"
-      ],
-      "@/*": [
-        "src/*"
-      ],
-      "@app/*": [
-        "src/app/*"
-      ],
-      "@config/*": [
-        "src/config/*"
-      ],
-      "@database/*": [
-        "src/database/*"
-      ],
-      "@shared/*": [
-        "src/shared/*"
-      ],
-      "@core/*": [
-        "src/core/*"
-      ],
-      "@modules/*": [
-        "src/app/modules/*"
-      ]
+      "@root/*": ["./*"],
+      "@/*": ["src/*"],
+      "@app/*": ["src/app/*"],
+      "@database/*": ["src/database/*"],
+      "@shared/*": ["src/shared/*"],
+      "@core/*": ["src/core/*"],
+      "@modules/*": ["src/app/modules/*"],
+      "@config/*": ["src/app/config/*"]
     }
   },
-  "exclude": [
-    "node_modules",
-    "build",
-    "docs"
-  ],
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ],
+  
   "scripts": {
     "postbuild": "copyfiles -u 1 src/secrets/**/* dist/secrets"
-  },
+  }
 }

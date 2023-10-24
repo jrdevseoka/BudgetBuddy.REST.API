@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common'
-import { configuration } from '../configuration'
+import { configuration } from './configuration'
 import { ConfigModule } from '@nestjs/config'
-import { validationSchema } from '@config/validation'
+import { validationSchema } from '../config/validation'
 const environment = process.env.NODE_ENV || 'development' // Default to 'development'
 const sanitizedEnvironment = environment.replace(/\s+/g, '') // Remove spaces
 const envFilePath = `src/config/env/${sanitizedEnvironment}.env`
